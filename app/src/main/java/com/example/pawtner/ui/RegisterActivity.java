@@ -97,5 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
         facebookButton.setOnClickListener(v -> {
             startActivity(new Intent(this, LoginActivity.class));
         });
+
+
     }
 }
