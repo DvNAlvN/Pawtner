@@ -27,7 +27,7 @@
         android:id="@+id/formCard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="55dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         app:cardCornerRadius="30dp"
@@ -38,60 +38,64 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="578dp"
             android:orientation="vertical"
-            android:paddingTop="8dp"
-            android:paddingBottom="10dp"
             android:paddingStart="15dp"
-            android:paddingEnd="15dp">
+            android:paddingTop="8dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp">
 
             <!-- 🖋 Judul -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign Up"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="#000000"
                 android:layout_gravity="center_horizontal"
                 android:paddingTop="8dp"
-                android:paddingBottom="12dp" />
+                android:paddingBottom="12dp"
+                android:text="Sign Up"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <!-- 📥 Input Fields -->
             <EditText
+                android:id="@+id/fullNameInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Full Name"
                 android:layout_marginTop="8dp"
-                android:padding="10dp"
-                android:backgroundTint="#CCCCCC"/>
+                android:backgroundTint="#CCCCCC"
+                android:hint="Full Name"
+                android:padding="10dp" />
 
             <EditText
+                android:id="@+id/emailInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#CCCCCC"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
-                android:layout_marginTop="8dp"
-                android:padding="10dp"
-                android:backgroundTint="#CCCCCC"/>
+                android:padding="10dp" />
 
             <EditText
+                android:id="@+id/passwordInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#CCCCCC"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:layout_marginTop="8dp"
-                android:padding="10dp"
-                android:backgroundTint="#CCCCCC"/>
+                android:padding="10dp" />
 
             <EditText
+                android:id="@+id/phoneInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#CCCCCC"
                 android:hint="Phone"
                 android:inputType="phone"
-                android:layout_marginTop="8dp"
-                android:padding="10dp"
-                android:backgroundTint="#CCCCCC"/>
+                android:padding="10dp" />
 
             <!-- ⚧ Gender -->
 
@@ -100,58 +104,76 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="0dp"
-                android:paddingLeft="10dp"
                 android:hint="Gender"
+                android:paddingLeft="10dp"
                 android:textColor="#000000"
                 android:textSize="18sp" />
 
             <RadioGroup
+                android:id="@+id/genderGroup"
                 android:layout_width="272dp"
                 android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
 
                 <RadioButton
+                    android:id="@+id/genderMale"
                     android:layout_width="83dp"
                     android:layout_height="wrap_content"
                     android:hint="Male"
                     android:textSize="16sp" />
 
                 <RadioButton
+                    android:id="@+id/genderFemale"
                     android:layout_width="102dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:textSize="16sp"
-                    android:hint="Female" />
+                    android:hint="Female"
+                    android:textSize="16sp" />
             </RadioGroup>
 
             <EditText
+                android:id="@+id/addressInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Address"
                 android:layout_marginTop="0dp"
-                android:padding="10dp"
-                android:backgroundTint="#CCCCCC"/>
+                android:backgroundTint="#CCCCCC"
+                android:hint="Address"
+                android:padding="10dp" />
 
             <EditText
+                android:id="@+id/nikInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#CCCCCC"
                 android:hint="National ID (NIK)"
                 android:inputType="number"
-                android:layout_marginTop="5dp"
-                android:padding="10dp"
-                android:backgroundTint="#CCCCCC"/>
+                android:padding="10dp" />
 
             <!-- 🔘 Tombol Sign Up -->
             <Button
+                android:id="@+id/signupButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:backgroundTint="#5D9BFF"
                 android:text="Sign Up"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#5D9BFF"
-                android:layout_marginTop="10dp"
-                app:cornerRadius="5dp"
-                android:layout_marginBottom="8dp" />
+                app:cornerRadius="5dp" />
+
+            <TextView
+                android:id="@+id/errorMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#FF0000"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:paddingTop="0dp"
+                android:paddingBottom="2dp" />
 
             <!-- 📜 Terms and Condition -->
             <TextView
@@ -162,6 +184,7 @@
                 android:text="@string/terms_text"
                 android:textAlignment="center"
                 android:textColor="#999999"
+                android:layout_marginTop="2dp"
                 android:textSize="14sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -197,6 +220,7 @@
         <!--            android:text="Facebook"-->
         <!--            android:textColor="#000000" />-->
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/googleButton"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginEnd="8dp"
@@ -211,6 +235,7 @@
             app:iconTintMode="multiply" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/facebookButton"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="8dp"
@@ -228,16 +253,20 @@
 
     <!-- 🔁 Sudah punya akun -->
     <TextView
+        android:id="@+id/signinText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Already have an account? Sign in"
-        android:text1="Sign in"
         android:textColor="#000000"
-        android:textColor1="##5D9BFF"
         android:textSize="14sp"
+        android:clickable="true"
+        android:focusable="true"
         android:layout_marginBottom="16dp"
         app:layout_constraintTop_toBottomOf="@id/socialLogin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

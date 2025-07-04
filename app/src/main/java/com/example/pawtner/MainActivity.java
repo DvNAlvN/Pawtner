@@ -24,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
-        setContentView(R.layout.register);
-
         TextView termsText = findViewById(R.id.termsText);
         termsText.setText(HtmlCompat.fromHtml(
                 getString(R.string.terms_text),
