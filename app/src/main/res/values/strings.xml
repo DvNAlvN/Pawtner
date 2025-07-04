@@ -3,4 +3,10 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="terms_text">
+    By clicking this button, you agree with our <font color='#5D9BFF'>Terms and Condition</font>
+    </string>
+
 </resources>
+
+
