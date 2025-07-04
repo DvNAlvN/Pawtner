@@ -7,6 +7,19 @@
     By clicking this button, you agree with our <font color='#5D9BFF'>Terms and Condition</font>
     </string>
 
+
+    <string name="full_name">Full Name</string>
+    <string name="gender">Gender</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="address">Address</string>
+    <string name="national_id">National ID (NIK)</string>
+    <string name="cannot_change">*This field cannot be changed once submitted.</string>
+
+
+
+
 </resources>
+
 
 

@@ -41,22 +41,33 @@ public class LoginActivity extends AppCompatActivity {
         signUpText.setText(spannable);
 
         // ✅ Validasi Sign In
-        signInButton.setOnClickListener(v -> {
-            String email = emailInput.getText().toString().trim();
-            String password = passwordInput.getText().toString().trim();
+            signInButton.setOnClickListener(v -> {
+                String email = emailInput.getText().toString().trim();
+                String password = passwordInput.getText().toString().trim();
 
-            if (email.isEmpty() || password.isEmpty()) {
-                errorMessage.setText("Please enter your email and password.");
-                errorMessage.setVisibility(TextView.VISIBLE);
-            } else {
-                errorMessage.setVisibility(TextView.GONE);
-                // startActivity(new Intent(this, HomeActivity.class));
-            }
-        });
+                if (email.isEmpty() || password.isEmpty()) {
+                    errorMessage.setText("Please enter your email and password.");
+                    errorMessage.setVisibility(TextView.VISIBLE);
+                } else {
+                    errorMessage.setVisibility(TextView.GONE);
+
+                    // ✅ Tambahkan data dummy untuk ProfileActivity
+                    Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+                    intent.putExtra("name", "John Doe");
+                    intent.putExtra("gender", "Male");
+                    intent.putExtra("phone", "081234567890");
+                    intent.putExtra("email", email); // ambil dari input login
+                    intent.putExtra("address", "Jl. Mawar No. 123");
+                    intent.putExtra("nik", "1234567890123456");
+                    startActivity(intent);
+                    finish(); // opsional: supaya tidak bisa kembali ke login
+                }
+            });
 
         // ✅ Arahkan ke Register
         signUpText.setOnClickListener(v -> {
             startActivity(new Intent(this, RegisterActivity.class));
         });
+
     }
 }
