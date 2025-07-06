@@ -53,12 +53,12 @@ public class LoginActivity extends AppCompatActivity {
 
                     // ✅ Tambahkan data dummy untuk ProfileActivity
                     Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
-                    intent.putExtra("name", "John Doe");
-                    intent.putExtra("gender", "Male");
+                    intent.putExtra("name", "Maritza Eka Rahmadhani");
+                    intent.putExtra("gender", "Female");
                     intent.putExtra("phone", "081234567890");
                     intent.putExtra("email", email); // ambil dari input login
-                    intent.putExtra("address", "Jl. Mawar No. 123");
-                    intent.putExtra("nik", "1234567890123456");
+                    intent.putExtra("address", "JL. Bibis Karah A66");
+                    intent.putExtra("nik", "3578216022030003");
                     startActivity(intent);
                     finish(); // opsional: supaya tidak bisa kembali ke login
                 }
