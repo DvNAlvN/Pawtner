@@ -4,20 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import com.google.android.material.button.MaterialButton;
-
 import android.graphics.Color;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.UnderlineSpan;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pawtner.R;
+import com.google.android.material.button.MaterialButton;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -30,32 +29,22 @@ public class RegisterActivity extends AppCompatActivity {
 
         setContentView(R.layout.register);
 
-//        TextView signInText = findViewById(R.id.signinText);
-
-        // 👉 Redirect untuk Sign In Text
+        // 👉 Teks "Already have an account? Sign in"
         TextView signInText = findViewById(R.id.signinText);
-        // Buat kalimat
         String baseText = "Already have an account? Sign in";
         SpannableString spannable = new SpannableString(baseText);
-
-        // Cari posisi "Sign in"
         int start = baseText.indexOf("Sign in");
         int end = start + "Sign in".length();
-
-        // Tambahkan warna biru dan underline hanya ke "Sign in"
         spannable.setSpan(new ForegroundColorSpan(Color.parseColor("#5D9BFF")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         spannable.setSpan(new UnderlineSpan(), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
         signInText.setText(spannable);
-        signInText.setOnClickListener(v -> {
-            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-            startActivity(intent);
-        });
 
+        signInText.setOnClickListener(v -> {
+            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+        });
 
         // ✅ Validasi untuk tombol Sign Up
         Button signUpButton = findViewById(R.id.signupButton);
-
         EditText fullNameInput = findViewById(R.id.fullNameInput);
         EditText emailInput = findViewById(R.id.emailInput);
         EditText passwordInput = findViewById(R.id.passwordInput);
@@ -63,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
         RadioGroup genderGroup = findViewById(R.id.genderGroup);
         EditText addressInput = findViewById(R.id.addressInput);
         EditText nikInput = findViewById(R.id.nikInput);
-        TextView errorMessage = findViewById(R.id.errorMessage); // 🔴 Tambahkan ini
+        TextView errorMessage = findViewById(R.id.errorMessage);
 
         signUpButton.setOnClickListener(v -> {
             String fullName = fullNameInput.getText().toString().trim();
@@ -77,16 +66,28 @@ public class RegisterActivity extends AppCompatActivity {
             if (fullName.isEmpty() || email.isEmpty() || password.isEmpty()
                     || phone.isEmpty() || selectedGenderId == -1
                     || address.isEmpty() || nik.isEmpty()) {
-                errorMessage.setText("Please complete all fields."); // 🔴 Munculkan pesan error
+                errorMessage.setText("Please complete all fields.");
                 errorMessage.setVisibility(TextView.VISIBLE);
             } else {
-                errorMessage.setVisibility(TextView.GONE); // ✅ Sembunyikan pesan jika valid
+                errorMessage.setVisibility(TextView.GONE);
+
+                // 🔽 Ambil gender string dari RadioButton
+                RadioButton selectedGenderRadio = findViewById(selectedGenderId);
+                String gender = selectedGenderRadio.getText().toString();
+
+                // 🔁 Kirim data ke ProfileActivity
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                intent.putExtra("name", fullName);
+                intent.putExtra("email", email);
+                intent.putExtra("phone", phone);
+                intent.putExtra("address", address);
+                intent.putExtra("nik", nik);
+                intent.putExtra("gender", gender);
                 startActivity(intent);
             }
         });
 
-        // 👉 Google & Facebook buttons
+        // 👉 Tombol Login via Google / Facebook (hanya redirect)
         MaterialButton googleButton = findViewById(R.id.googleButton);
         MaterialButton facebookButton = findViewById(R.id.facebookButton);
 
@@ -97,7 +98,5 @@ public class RegisterActivity extends AppCompatActivity {
         facebookButton.setOnClickListener(v -> {
             startActivity(new Intent(this, LoginActivity.class));
         });
-
-
     }
 }
