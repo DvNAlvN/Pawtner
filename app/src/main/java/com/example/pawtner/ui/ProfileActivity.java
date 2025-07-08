@@ -46,6 +46,13 @@ public class ProfileActivity extends AppCompatActivity {
         addressInput = findViewById(R.id.addressInput);
         nikInput = findViewById(R.id.nikInput);
 
+        ImageView backBtn = findViewById(R.id.backBtn);
+        backBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this, NotificationActivity.class);
+            startActivity(intent);
+            finish(); // jika tidak ingin user kembali ke ProfileActivity
+        });
+
         // Data awal
         nameInput.setText("Maritza Eka");
         genderInput.setText("Female");
