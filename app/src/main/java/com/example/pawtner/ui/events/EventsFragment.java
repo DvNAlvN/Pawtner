@@ -1,4 +1,4 @@
-package com.example.pawtner.ui.home;
+package com.example.pawtner.ui.events;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,19 +6,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.pawtner.databinding.FragmentHomeBinding;
+import com.example.pawtner.databinding.FragmentEventsBinding;
 
-public class HomeFragment extends Fragment {
+public class EventsFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentEventsBinding binding;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentEventsBinding.inflate(inflater, container, false);
+        binding.textEvents.setText("Ini halaman Events");
         return binding.getRoot();
     }
 

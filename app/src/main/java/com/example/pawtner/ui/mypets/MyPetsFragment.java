@@ -1,4 +1,4 @@
-package com.example.pawtner.ui.home;
+package com.example.pawtner.ui.mypets;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,19 +6,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.pawtner.databinding.FragmentHomeBinding;
+import com.example.pawtner.databinding.FragmentMypetsBinding;
 
-public class HomeFragment extends Fragment {
+public class MyPetsFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentMypetsBinding binding;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentMypetsBinding.inflate(inflater, container, false);
+        binding.textMypets.setText("Ini halaman My Pets");
         return binding.getRoot();
     }
 
