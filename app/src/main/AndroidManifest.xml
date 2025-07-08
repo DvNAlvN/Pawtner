@@ -22,6 +22,9 @@
         <activity android:name=".MainActivity" android:exported="true" />
         <activity android:name=".ui.ProfileActivity" />
         <activity android:name=".ui.ProfileEditActivity" />
+        <activity android:name=".ui.NotificationActivity" />
+        <activity android:name=".ui.NotificationDetailActivity" />
+
     </application>
 
 </manifest>

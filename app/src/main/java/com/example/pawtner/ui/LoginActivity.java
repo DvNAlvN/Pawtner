@@ -48,6 +48,9 @@ public class LoginActivity extends AppCompatActivity {
                 if (email.isEmpty() || password.isEmpty()) {
                     errorMessage.setText("Please enter your email and password.");
                     errorMessage.setVisibility(TextView.VISIBLE);
+                } else if (!email.contains("@")) {
+                    errorMessage.setText("Email must contain '@'.");
+                    errorMessage.setVisibility(TextView.VISIBLE);
                 } else {
                     errorMessage.setVisibility(TextView.GONE);
 
