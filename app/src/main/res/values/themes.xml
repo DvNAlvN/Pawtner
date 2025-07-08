@@ -1,4 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <style name="Theme.Pawtner" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Nonaktifkan ActionBar bawaan -->
         <item name="windowActionBar">false</item>
