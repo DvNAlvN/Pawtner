@@ -15,5 +15,7 @@
     <color name="white_paw">#FFF9ED</color>
     <color name="darkblue_paw">#22254C</color>
     <color name="grey_paw">#D1D1D6</color>
+    <color name="primary">#5C85FF</color>
+
 
 </resources>

@@ -24,6 +24,8 @@
         <activity android:name=".ui.ProfileEditActivity" />
         <activity android:name=".ui.NotificationActivity" />
         <activity android:name=".ui.NotificationDetailActivity" />
+        <activity android:name=".ChatDetailActivity" />
+
 
     </application>
 
